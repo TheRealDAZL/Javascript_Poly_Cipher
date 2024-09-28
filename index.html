@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Chiffrement polyalphabétique par transposition et substitution en bloc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/cadenas.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/classes.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+
+
+
+<body>
+<section>
+    <div class="container-fluid col text-center lh-lg">
+        <div>
+            <br>
+            <h1 class="couleurTexte font-size-h1 fw-bold">Chiffrement polyalphabétique<br>par transposition et substitution en bloc</h1>
+            <br>
+        </div>
+
+        <div>
+            <img id="imageCrypto" src="img/chiffrement.png" class="img-fluid" alt="Image cryptographie symétrique">
+        </div>
+
+        <form action="" method="post">
+            <div>
+                <br>
+                <br>
+                <p id="messageLibrairie" class="couleurTexte font-size-pTexte"></p>
+                <button class="btn btn-primary btn-lg font-size-pTexte" id="afficherLibrairie" type="button">Cacher les instructions</button>
+                <br>
+                <br>
+                <p id="messageUtilisateur" class="invisible couleurTexte font-size-pTexte"></p>
+                <br>
+                <label for="messageIntrant"><span class="couleurTexte font-size-pTexte">Message à encoder/décoder (champ requis)</span></label>
+                <br>
+                <input class="text-center col-xl-9 col-sm-12 col-12 font-size-pCartes couleurObjet" type="text" id="messageIntrant" name="message" required>
+                <br>
+                <label for="librairie"><span class="couleurTexte font-size-pTexte">Librairie des caractères valides</span></label>
+                <br>
+                <input class="text-center col-xl-9 col-sm-12 col-12 font-size-pCartes couleurObjet" type="text" id="librairie" name="librairie" value="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .">
+                <br>
+                <label for="cleIntrantSub"><span class="couleurTexte font-size-pTexte">Clé de substitution</span></label>
+                <br>
+                <input class="text-center col-xl-9 col-sm-12 col-12 font-size-pCartes couleurObjet" type="text" id="cleIntrantSub" name="cleSub">
+                <br>
+                <label for="cleIntrantTra"><span class="couleurTexte font-size-pTexte">Clé de transposition</span></label>
+                <br>
+                <input class="text-center col-xl-9 col-sm-12 col-12 font-size-pCartes couleurObjet" type="text" id="cleIntrantTra" name="cleTra">
+                <br>
+                <br>
+                <fieldset>
+                    <legend><span class="couleurTexte font-size-pTexte">Choisissez le sens de votre chiffrement :</span></legend>
+
+                    <div>
+                        <input type="radio" id="encoder" name="sens" checked>
+                        <label for="encoder"><span class="couleurTexte font-size-pTexte">Encoder</span></label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="decoder" name="sens">
+                        <label for="decoder"><span class="couleurTexte font-size-pTexte">Décoder</span></label>
+                    </div>
+                </fieldset>
+                <br>
+                <button class="btn btn-primary btn-lg font-size-pTexte" id="envoyer" type="submit">Chiffrer/déchiffrer le message</button>
+                <br>
+                <br>
+                <label for="messageExtrant"><span class="couleurTexte font-size-pTexte">Résultat</span></label>
+                <br>
+                <input class="text-center col-xl-9 col-sm-12 col-12 font-size-pCartes couleurObjet" type="text" id="messageExtrant" name="resultat" readonly>
+                <br>
+                <br>
+                <button class="btn btn-danger btn-lg font-size-pTexte" id="reinitialiser" type="reset">Réinitialiser tous les champs</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<br>
+<br>
+<br>
+
+<section>
+    <div class="container-fluid col text-center lh-lg">
+        <br>
+
+        <h1 class="couleurTexte font-size-h1 fw-bold">Liste d'objets</h1>
+        <br>
+
+        <div class="row" id="card-container">
+        </div>
+
+        <br>
+        <button class="btn btn-primary btn-lg font-size-pTexte" id="afficherInfos" type="button">Afficher toutes les infos</button>
+        <br>
+        <br>
+        <button class="btn btn-danger btn-lg font-size-pTexte" id="supprimerTout" type="button">Supprimer tous les objets</button>
+        <br>
+        <br>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+</body>
+</html>
